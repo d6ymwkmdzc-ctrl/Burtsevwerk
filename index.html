@@ -10,6 +10,7 @@
 <meta property="og:description" content="Moderné weby, aplikácie a digitálne riešenia s AI. Originálny dizajn, ktorý vystúpi z radu.">
 <meta property="og:image" content="https://burtsevwerk.eu/tree.webp">
 <meta name="theme-color" content="#070B09">
+<meta name="bw-api" content="https://burtsevwerk-api.onrender.com">
 <link rel="preload" as="image" href="tree.webp" media="(min-aspect-ratio: 1/1)">
 <link rel="preload" as="image" href="tree_v.webp" media="(max-aspect-ratio: 1/1)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,6 +52,30 @@ a{color:#FFC977}a:hover{color:#FFE2B3}
 .bw select{width:100%;border-radius:12px;padding:14px 16px;font:16px Inter,sans-serif;color:#F7F5ED;background:rgba(12,18,16,.78);border:1px solid rgba(255,255,255,.18);color-scheme:dark;-webkit-appearance:none;appearance:none;background-image:linear-gradient(45deg,transparent 50%,#FFB547 50%),linear-gradient(135deg,#FFB547 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat}
 .bw select:focus{outline:none;border-color:#FFB547;box-shadow:0 0 0 3px rgba(255,181,71,.22)}
 .bw .tg-btn{border-radius:12px}
+.bw .sr-only,.bw .hp{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;padding:0;margin:-1px}
+.bw .ai-glow{position:relative;border:1px solid rgba(255,181,71,.55);background:rgba(12,18,16,.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 0 0 1px rgba(255,181,71,.12),0 0 26px rgba(255,181,71,.22);animation:aiGlow 3.2s ease-in-out infinite}
+@keyframes aiGlow{0%,100%{box-shadow:0 0 0 1px rgba(255,181,71,.12),0 0 18px rgba(255,181,71,.16)}50%{box-shadow:0 0 0 1px rgba(255,181,71,.3),0 0 34px rgba(255,181,71,.34)}}
+@media (prefers-reduced-motion:reduce){.bw .ai-glow{animation:none}}
+.bw .ai-chip:hover{border-color:#FFB547}
+.bw .ai-form input{min-height:52px}
+.bw #ai-out{border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:20px;background:rgba(12,18,16,.6);display:flex;flex-direction:column;gap:16px}
+.bw #ai-out[hidden]{display:none}
+.bw .ai-head{display:flex;gap:16px;align-items:center}
+.bw .ai-score{flex:0 0 auto;width:72px;height:72px;border-radius:50%;display:grid;place-items:center;font:700 24px 'Chakra Petch',sans-serif;color:#F7F5ED;background:conic-gradient(#FFB547 calc(var(--v)*1%),rgba(255,255,255,.12) 0);position:relative}
+.bw .ai-score::before{content:"";position:absolute;inset:6px;border-radius:50%;background:#0d1411}
+.bw .ai-score span{position:relative}
+.bw .ai-metrics{display:flex;flex-wrap:wrap;gap:8px}
+.bw .ai-metrics span{font-size:13px;padding:6px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.18);color:#E5E7E3}
+.bw .ai-checks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.bw .ai-checks li{display:grid;grid-template-columns:12px 1fr;gap:10px;align-items:start;line-height:1.5;color:#E5E7E3;font-size:15px}
+.bw .ai-dot{width:10px;height:10px;border-radius:50%;margin-top:7px;background:#FFB547}
+.bw .ai-dot.ok{background:#7BD389}.bw .ai-dot.bad{background:#FF6B5E}
+.bw .ai-tips{margin:0;padding-left:20px;display:grid;gap:8px;color:#F7F5ED;line-height:1.5}
+.bw .ai-wait{display:flex;align-items:center;gap:12px;color:#E5E7E3}
+.bw .ai-spin{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,181,71,.25);border-top-color:#FFB547;animation:aiSpin .9s linear infinite}
+@keyframes aiSpin{to{transform:rotate(360deg)}}
+.bw .form-note{margin:0;font-size:15px;line-height:1.5}
+
 @media (max-width:560px){.bw #kontakt form{grid-template-columns:1fr!important}}
 
 .bw .hero-glass{position:relative;isolation:isolate;padding:18px 20px;border:1px solid rgba(255,255,255,.18);border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08);text-shadow:0 1px 2px rgba(0,0,0,.35)}
@@ -135,6 +160,7 @@ MENU
 <a href="#pripad" class="hud btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; background: #FFB547; color: #171A16; text-decoration: none; font: 700 15px 'Chakra Petch', sans-serif; letter-spacing: .1em">Pozrieť našu tvorbu →</a>
 <a href="#kontakt" class="hud" style="display: inline-flex; align-items: center; min-height: 44px; color: #F7F5ED; font-size: 14px; font-weight: 600; letter-spacing: .1em; text-decoration: underline; text-decoration-color: rgba(255,181,71,.8); text-decoration-thickness: 1px; text-underline-offset: 7px">Máte vlastný nápad?</a>
 </div>
+<a href="#problemy" class="hud ai-chip ai-glow" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px; border-radius: 12px; color: #F7F5ED; text-decoration: none; font-size: 13px; letter-spacing: .08em"><span style="color: #FFB547">✦</span> Novinka: AI analýza webu za 30 s <span style="color: #FFB547">→</span></a>
 <p class="hud" style="margin: 0; font-size: 12px; color: rgba(229,231,227,.86); text-shadow: 0 1px 2px rgba(0,0,0,.6), 0 1px 10px rgba(0,0,0,.45)">Weby · SEO · nájditeľnosť v Google aj v ChatGPT · SK / PL / EN</p>
 </div>
 </section>
@@ -142,8 +168,17 @@ MENU
 <!-- PROBLEMS (right) -->
 <section id="problemy" style="display: flex; justify-content: flex-end; padding: 200px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
 <div class="panel">
-<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">01 / Diagnostika</p>
-<h2 class="hud" style="margin: 0 0 28px; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Čo zvyčajne nájdeme</h2>
+<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">01 / AI expresná analýza</p>
+<h2 class="hud" style="margin: 0 0 14px; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Skontrolujte svoj web za 30 sekúnd</h2>
+<p style="margin: 0 0 20px; color: #E5E7E3; line-height: 1.6">Umelá inteligencia preverí rýchlosť, mobil, Google aj AI vyhľadávanie a dá vám 3 konkrétne rady. Zadarmo a bez registrácie.</p>
+<form class="ai-form ai-glow" data-analyze style="display: flex; gap: 10px; flex-wrap: wrap; padding: 10px; border-radius: 16px; margin: 0 0 14px">
+<label for="ai-url" class="sr-only">Adresa webu</label>
+<input id="ai-url" type="text" inputmode="url" autocomplete="url" placeholder="www.vasafirma.sk" style="flex: 1 1 220px">
+<input type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+<button type="submit" class="hud btn" style="flex: 0 0 auto; min-height: 52px; padding: 0 22px; background: #FFB547; color: #171A16; border: 0; cursor: pointer; font: 700 15px 'Chakra Petch', sans-serif; letter-spacing: .1em">Analyzovať →</button>
+</form>
+<div id="ai-out" aria-live="polite" hidden></div>
+<p class="hud" style="margin: 26px 0 12px; font-size: 13px; color: #B9C2B7">Čo kontrolujeme</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
 
 <article class="card glass" style=" padding: 20px; display: flex; flex-direction: column; gap: 10px">
@@ -296,6 +331,7 @@ MENU
 <h2 class="hud" style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Máte nápad? Poďme ho zrealizovať</h2>
 <p style="margin: 0; color: #B9C2B7; line-height: 1.6">Napíšte, čo potrebujete — web, aplikáciu alebo AI riešenie. Ozvem sa čo najskôr.</p>
 <form style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px" data-form>
+<input type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
 <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-name" class="hud" style="font-size: 13px; color: #B9C2B7">Meno</label><input id="f-name" type="text" autocomplete="name"></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-contact" class="hud" style="font-size: 13px; color: #B9C2B7">E-mail alebo telefón</label><input id="f-contact" type="text" autocomplete="email"></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-type" class="hud" style="font-size: 13px; color: #B9C2B7">Čo potrebujete</label><select id="f-type"><option>Nový web</option><option>Webová aplikácia</option><option>AI riešenie</option><option>Redizajn webu</option><option>Expresná analýza webu</option><option>Iné</option></select></div>
@@ -478,12 +514,56 @@ document.addEventListener('click',function(e){
   if(t.dataset.lang){document.querySelectorAll('[data-lang]').forEach(function(b){b.classList.toggle('on',b===t)});}
 });
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden){h.menu=false;menu.hidden=true;}});
+var API=(document.querySelector('meta[name="bw-api"]')||{}).content||'';
+function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+function post(path,data,ms){
+  var ctl=new AbortController();var t=setTimeout(function(){ctl.abort()},ms||90000);
+  return fetch(API+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:ctl.signal})
+    .then(function(r){return r.json().catch(function(){return {}}).then(function(j){clearTimeout(t);if(!r.ok)throw new Error(j.error||'Nastala chyba. Skúste to znova.');return j;});})
+    .catch(function(e){clearTimeout(t);if(e.name==='AbortError')throw new Error('Server neodpovedá. Skúste to o chvíľu.');if(e instanceof TypeError)throw new Error('Spojenie so serverom zlyhalo. Skúste to o chvíľu.');throw e;});
+}
+var aiForm=document.querySelector('form[data-analyze]'),aiOut=document.getElementById('ai-out');
+if(aiForm&&aiOut){aiForm.addEventListener('submit',function(e){
+  e.preventDefault();
+  var url=aiForm.querySelector('#ai-url').value.trim(),btn=aiForm.querySelector('button');
+  if(!url){aiForm.querySelector('#ai-url').focus();return;}
+  btn.disabled=true;aiOut.hidden=false;aiOut.replaceChildren();
+  var w=el('div','ai-wait');w.append(el('span','ai-spin'));var wt=el('span',null,'Načítavam web…');w.append(wt);aiOut.append(w);
+  var steps=['Meriam rýchlosť na mobile…','Kontrolujem Google a AI vyhľadávanie…','AI pripravuje odporúčania…','Server sa prebúdza, ešte chvíľu strpenie…'],si=0;
+  var iv=setInterval(function(){if(si<steps.length)wt.textContent=steps[si++];},7000);
+  post('/api/analyze',{url:url,hp:aiForm.querySelector('.hp').value},120000).then(function(d){
+    aiOut.replaceChildren();
+    var head=el('div','ai-head');var sc=el('div','ai-score');sc.style.setProperty('--v',d.score);sc.append(el('span',null,String(d.score)));
+    var hv=el('div');hv.append(el('div','hud',d.url.replace(/^https?:\/\//,'').replace(/\/$/,'')));hv.lastChild.style.cssText='font-size:13px;color:#FFB547;margin-bottom:6px;word-break:break-all';
+    hv.append(el('p','form-note',d.verdict));head.append(sc,hv);aiOut.append(head);
+    var m=d.metrics||{},mt=el('div','ai-metrics');
+    if(m.speedMobile!=null)mt.append(el('span',null,'Rýchlosť na mobile: '+m.speedMobile+'/100'));
+    if(m.lcpSec!=null)mt.append(el('span',null,'Načítanie: '+String(m.lcpSec).replace('.',',')+' s'));
+    mt.append(el('span',null,m.https?'HTTPS ✓':'Bez HTTPS ✕'));mt.append(el('span',null,m.mobileReady?'Mobilná verzia ✓':'Mobilná verzia ✕'));
+    aiOut.append(mt);
+    var ul=el('ul','ai-checks');(d.checks||[]).forEach(function(c){var li=el('li');li.append(el('span','ai-dot '+c.status));var tx=el('span');var b=el('strong',null,c.area+': ');tx.append(b,document.createTextNode(c.note));li.append(tx);ul.append(li);});aiOut.append(ul);
+    aiOut.append(el('p','hud',"3 rady na začiatok"));aiOut.lastChild.style.cssText='margin:0;font-size:13px;color:#FFB547';
+    var ol=el('ol','ai-tips');(d.tips||[]).forEach(function(t){ol.append(el('li',null,t));});aiOut.append(ol);
+    var cta=el('a','hud btn','Chcem to vylepšiť →');cta.href='#kontakt';cta.style.cssText='display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;background:#FFB547;color:#171A16;text-decoration:none;font:700 15px Chakra Petch,sans-serif;letter-spacing:.1em;border-radius:12px;align-self:flex-start';
+    cta.addEventListener('click',function(){var u=document.getElementById('f-url'),t=document.getElementById('f-type'),ms=document.getElementById('f-msg');if(u)u.value=d.url;if(t)t.value='Redizajn webu';if(ms&&!ms.value)ms.value='AI analýza: '+d.score+'/100. Chcem vedieť, čo s tým urobiť.';});
+    aiOut.append(cta);
+    aiOut.append(el('p',null,'Výsledok pripravila AI z verejne dostupných údajov webu. Je orientačný.'));aiOut.lastChild.style.cssText='margin:0;font-size:12px;color:#A9B3A8';
+  }).catch(function(err){
+    aiOut.replaceChildren(el('p','form-note',err.message));
+  }).finally(function(){clearInterval(iv);btn.disabled=false;});
+});}
 document.querySelectorAll('form[data-form]').forEach(function(f){
   f.addEventListener('submit',function(e){
     e.preventDefault();
-    var g=function(id){var el=f.querySelector('#'+id);return el?el.value:''};
-    var lines=['Meno: '+g('f-name'),'Kontakt: '+g('f-contact'),'Čo potrebujem: '+g('f-type'),'Web: '+g('f-url'),'Správa: '+g('f-msg')];
-    location.href='mailto:info@burtsevwerk.eu?subject='+encodeURIComponent('Správa z webu BurtsevWerk')+'&body='+encodeURIComponent(lines.join('\n'));
+    var g=function(id){var x=f.querySelector('#'+id);return x?x.value.trim():''};
+    var btn=f.querySelector('button[type="submit"]'),note=f.querySelector('.form-note');
+    if(!note){note=el('p','form-note');note.style.gridColumn='1 / -1';f.append(note);}
+    if(!g('f-contact')){note.textContent='Zadajte e-mail alebo telefón, aby sme vám mohli odpovedať.';f.querySelector('#f-contact').focus();return;}
+    btn.disabled=true;note.textContent='Odosielam…';
+    post('/api/contact',{name:g('f-name'),contact:g('f-contact'),type:g('f-type'),url:g('f-url'),msg:g('f-msg'),hp:(f.querySelector('.hp')||{}).value||''},60000)
+      .then(function(){f.reset();note.textContent='Ďakujem! Správa prišla, ozvem sa čo najskôr.';note.style.color='#7BD389';})
+      .catch(function(err){note.replaceChildren(document.createTextNode(err.message+' Alebo napíšte priamo na '),(function(){var a=el('a',null,'Telegram @Artbrl');a.href='https://t.me/Artbrl';a.style.color='#FFB547';return a})());note.style.color='#FFB547';})
+      .finally(function(){btn.disabled=false;});
   });
 });
 })();
