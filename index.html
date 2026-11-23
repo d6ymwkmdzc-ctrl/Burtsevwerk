@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BurtsevWerk — weby, ktoré predávajú</title>
+<meta name="description" content="Bezplatná analýza webu: zistíme, prečo váš web nepredáva. Rýchle weby, SEO a viditeľnosť v Google aj v AI pre firmy na Slovensku.">
+<link rel="canonical" href="https://burtsevwerk.eu/">
+<meta property="og:title" content="BurtsevWerk — weby, ktoré predávajú">
+<meta property="og:description" content="Bezplatná analýza webu. Kde je problém?">
+<meta property="og:image" content="https://burtsevwerk.eu/tree.webp">
+<meta name="theme-color" content="#3E6A2A">
+<link rel="preload" as="image" href="tree.webp" media="(min-aspect-ratio: 1/1)">
+<link rel="preload" as="image" href="tree_v.webp" media="(max-aspect-ratio: 1/1)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+video.tree::-webkit-media-controls, video.tree::-webkit-media-controls-start-playback-button, video.tree::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; opacity: 0; }
+body{margin:0;background:#070B09}
+a{color:#FFC977}a:hover{color:#FFE2B3}
+.bw *{box-sizing:border-box}
+.bw .hud{font-family:'Chakra Petch',sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.bw .bar{transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
+.bw .bar.hidden{transform:translateY(-120%);opacity:0}
+.bw .btn{transition:transform .15s,box-shadow .15s}
+.bw .btn:hover{transform:translateY(-2px);box-shadow:0 0 0 2px var(--acc),0 10px 30px -10px var(--acc)}
+.bw .card{transition:border-color .2s,transform .2s}
+.bw .card:hover{border-color:var(--acc);transform:translateY(-3px)}
+.bw .panel{pointer-events:auto;width:100%;max-width:660px;background:rgba(12,18,14,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-shadow:0 1px 4px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.24);border-radius:22px;box-shadow:0 10px 40px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.28);padding:clamp(24px,4vw,48px)}
+.bw .glass{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.2);border-radius:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+.bw .btn{border-radius:12px}
+.bw .blink{animation:blink 1.1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.bw .overlay{animation:ovIn .35s ease-out both}
+@keyframes ovIn{from{opacity:0}to{opacity:1}}
+.bw .mi{opacity:0;animation:miIn .5s cubic-bezier(.2,.8,.2,1) both;transition:color .15s,padding .2s}
+.bw .mi{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:10px 22px;margin-bottom:8px}
+.bw .mi:hover{color:var(--acc);padding-left:34px;background:rgba(255,255,255,.14)}
+.bw .d1{animation-delay:.05s}.bw .d2{animation-delay:.1s}.bw .d3{animation-delay:.15s}.bw .d4{animation-delay:.2s}.bw .d5{animation-delay:.25s}.bw .d6{animation-delay:.3s}
+@keyframes miIn{from{opacity:0;transform:translateX(-60px) skewX(-12deg);clip-path:inset(0 100% 0 0)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
+.bw .pill{cursor:pointer;border:1px solid rgba(255,255,255,.28);border-radius:10px;background:rgba(255,255,255,.1);color:#C2CBC0;padding:8px 10px;min-width:44px;min-height:44px;font:inherit}
+.bw .pill.on{border-color:var(--acc);color:#070B09;background:var(--acc)}
+.bw input,.bw textarea{width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:12px;color:#EEF1EA;padding:14px 16px;font:16px Inter,sans-serif}
+.bw input:focus,.bw textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
+.bw input::placeholder,.bw textarea::placeholder{color:#C9D1C7}
+.bw .tree{cursor:grab;touch-action:pan-y}
+@media (max-width:560px){.bw .panel{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}.bw .langs{display:none}.bw section:not(#top){padding-top:75vh!important}.bw .panel{padding:20px;border-radius:18px}}
+.bw .tree:active{cursor:grabbing}
+@media (prefers-reduced-motion:reduce){.bw *{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="bw" style="--acc: #FFB547; background: #3E6A2A; color: #EEF1EA; font-family: Inter, sans-serif; position: relative; overflow-x: clip">
+
+<!-- 3D TREE: sticky full-screen canvas behind everything -->
+<div style="position: sticky; top: 0; height: 100vh; z-index: 0">
+<video class="tree" id="tree" muted="" playsinline="" preload="auto" aria-label="Let ponad oblaky k obrovskému stromu na skale a okolo neho" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #6fa8de"></video>
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 80% at 12% 8%, rgba(255,240,205,.28), rgba(255,240,205,0) 55%), linear-gradient(rgba(7,11,9,.35), rgba(7,11,9,0) 16%), linear-gradient(0deg, rgba(225,236,246,.35), rgba(225,236,246,0) 35%)"></div>
+<div aria-hidden="true" class="hud" style="position: absolute; right: clamp(16px, 4vw, 48px); bottom: 20px; font-size: 12px; color: #8C978B">Scrollujte · obíďte strom</div>
+</div>
+
+<!-- CONTENT LAYER over the tree -->
+<div style="position: relative; z-index: 1; margin-top: -100vh; pointer-events: none">
+
+<header class="bar" style="pointer-events: auto; position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px clamp(16px, 4vw, 48px); background: linear-gradient(rgba(7,11,9,.85), rgba(7,11,9,0))">
+<a href="#top" class="hud" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #EEF1EA; font-size: 20px; font-weight: 700">
+<span aria-hidden="true" style="width: 34px; height: 34px; border: 2px solid var(--acc); display: grid; place-items: center; color: var(--acc); font-size: 16px; transform: rotate(45deg)"><span style="transform: rotate(-45deg)">W</span></span>
+<span>Burtsev<span style="color: var(--acc)">Werk</span></span>
+</a>
+<div style="display: flex; align-items: center; gap: 10px">
+<div class="hud langs" style="display: flex; gap: 4px; font-size: 13px" role="group" aria-label="Jazyk">
+
+<button type="button" class="pill on" data-lang="SK">SK</button>
+
+<button type="button" class="pill " data-lang="PL">PL</button>
+
+<button type="button" class="pill " data-lang="EN">EN</button>
+
+</div>
+<button type="button" class="hud btn" data-act="open" aria-label="Otvoriť menu" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px; background: rgba(7,11,9,.6); color: #EEF1EA; border: 1px solid #EEF1EA; cursor: pointer; font: 600 14px 'Chakra Petch', sans-serif; letter-spacing: .12em">
+<svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M6 7h16M0 13h22" stroke="currentColor" stroke-width="2"></path></svg>
+MENU
+</button>
+</div>
+</header>
+
+<!-- HERO -->
+<section id="top" style="min-height: 820px; display: flex; align-items: center; padding: 40px clamp(16px, 4vw, 48px) 80px; max-width: 1440px; margin: 0 auto">
+<div style="pointer-events: auto; max-width: 640px; display: flex; flex-direction: column; gap: 24px; text-shadow: 0 2px 24px rgba(0,0,0,.85)">
+<p class="hud" style="margin: 0; font-size: 14px; color: var(--acc)">● Korene sú silné <span class="blink">_</span></p>
+<h1 class="hud" style="margin: 0; font-size: clamp(52px, 8vw, 116px); line-height: .92; letter-spacing: .01em; text-transform: none">Kde je<br>problém?</h1>
+<p style="margin: 0; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.5; color: #D3DAD1">Vaša firma rástla roky — a zrazu sa zastavila? Nájdeme, čo brzdí váš web. Analýza je <strong style="color: #EEF1EA">zadarmo</strong>.</p>
+<form style="display: flex; flex-wrap: wrap; gap: 10px" data-form>
+<label for="hero-url" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Adresa vášho webu</label>
+<input id="hero-url" type="url" placeholder="www.vasafirma.sk" style="flex: 1 1 260px">
+<button type="submit" class="hud btn" style="min-height: 52px; padding: 0 24px; background: var(--acc); color: #070B09; border: 0; cursor: pointer; font: 700 15px 'Chakra Petch', sans-serif; letter-spacing: .1em">Spustiť analýzu →</button>
+</form>
+<p class="hud" style="margin: 0; font-size: 12px; color: #A9B3A8">Weby · SEO · nájditeľnosť v Google aj v ChatGPT · SK / PL / EN</p>
+</div>
+</section>
+
+<!-- PROBLEMS (right) -->
+<section id="problemy" style="display: flex; justify-content: flex-end; padding: 200px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
+<div class="panel">
+<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">01 / Diagnostika</p>
+<h2 class="hud" style="margin: 0 0 28px; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Čo zvyčajne nájdeme</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+
+<article class="card glass" style=" padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span class="hud" style="font-size: 13px; color: var(--acc)">ERR-01</span>
+<h3 style="margin: 0; font-size: 19px; line-height: 1.3">Web sa načítava pomaly</h3>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.55; font-size: 15px">Zákazník čaká pár sekúnd navyše — a odíde ku konkurencii.</p>
+</article>
+
+<article class="card glass" style=" padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span class="hud" style="font-size: 13px; color: var(--acc)">ERR-02</span>
+<h3 style="margin: 0; font-size: 19px; line-height: 1.3">Nefunguje na mobile</h3>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.55; font-size: 15px">Väčšina ľudí hľadá v telefóne. Ak sa web rozpadne, dopyt nepríde.</p>
+</article>
+
+<article class="card glass" style=" padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span class="hud" style="font-size: 13px; color: var(--acc)">ERR-03</span>
+<h3 style="margin: 0; font-size: 19px; line-height: 1.3">Nenájdu vás v Google ani v ChatGPT</h3>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.55; font-size: 15px">Bez SEO a štruktúrovaných údajov vás vyhľadávače aj AI asistenti obchádzajú.</p>
+</article>
+
+<article class="card glass" style=" padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span class="hud" style="font-size: 13px; color: var(--acc)">ERR-04</span>
+<h3 style="margin: 0; font-size: 19px; line-height: 1.3">Konkurencia predáva, vy nie</h3>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.55; font-size: 15px">Ceny aj sortiment máte v poriadku. Problém je v tom, ako sa prezentujete online.</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- PROCESS (left) -->
+<section id="postup" style="display: flex; justify-content: flex-start; padding: 240px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
+<div class="panel">
+<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">02 / Postup</p>
+<h2 class="hud" style="margin: 0 0 24px; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Od koreňov po korunu</h2>
+
+<div style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.18)">
+<span class="hud" style="font-size: 40px; font-weight: 700; color: var(--acc); line-height: 1; min-width: 56px">01</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="hud" style="margin: 0; font-size: 19px">Korene · Analýza</h3>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.55">Zadarmo preveríme rýchlosť, mobil, SEO a to, ako vás vidia zákazníci.</p>
+</div>
+</div>
+
+<div style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.18)">
+<span class="hud" style="font-size: 40px; font-weight: 700; color: var(--acc); line-height: 1; min-width: 56px">02</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="hud" style="margin: 0; font-size: 19px">Kmeň · Návrh</h3>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.55">Dostanete jasný plán: čo opraviť, čo postaviť nanovo a koľko to stojí.</p>
+</div>
+</div>
+
+<div style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.18)">
+<span class="hud" style="font-size: 40px; font-weight: 700; color: var(--acc); line-height: 1; min-width: 56px">03</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="hud" style="margin: 0; font-size: 19px">Konáre · Vývoj</h3>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.55">Postavíme rýchly web v slovenčine, poľštine aj angličtine.</p>
+</div>
+</div>
+
+<div style="display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.18)">
+<span class="hud" style="font-size: 40px; font-weight: 700; color: var(--acc); line-height: 1; min-width: 56px">04</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="hud" style="margin: 0; font-size: 19px">Koruna · Rast</h3>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.55">SEO a úpravy podľa dát, aby web predával aj o rok.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- CASE (right) -->
+<section id="pripad" style="display: flex; justify-content: flex-end; padding: 240px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
+<div class="panel" style="display: flex; flex-direction: column; gap: 18px">
+<p class="hud" style="margin: 0; font-size: 14px; color: var(--acc)">03 / Prípad</p>
+<h2 class="hud" style="margin: 0; font-size: clamp(30px, 3.4vw, 44px); text-transform: none; letter-spacing: 0">Výrobca strojov: späť na vrchol</h2>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.6; font-size: 17px">Firma roky predávala dobre, no obchodníci s modernejšími webmi im brali zákazníkov. Postavili sme nový B2B katalóg s mobilnou verziou a AI konzultantom, ktorý poradí s výberom stroja.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="aspect-ratio: 4/3; border: 1px dashed rgba(255,255,255,.35); border-radius: 14px; display: grid; place-items: center; text-align: center; color: #8C978B; padding: 12px"><span class="hud" style="font-size: 12px">Pred<br>[screenshot]</span></div>
+<div style="aspect-ratio: 4/3; border: 1px solid var(--acc); border-radius: 14px; display: grid; place-items: center; text-align: center; padding: 12px; box-shadow: 0 0 50px -20px var(--acc)"><span class="hud" style="font-size: 12px">Po<br>[screenshot]</span></div>
+</div>
+<a href="#" class="hud btn" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border: 1px solid var(--acc); color: var(--acc); text-decoration: none; font-size: 14px; font-weight: 600">Pozrieť demo → [ODKAZ]</a>
+</div>
+</section>
+
+<!-- PRICES (left) -->
+<section id="cennik" style="display: flex; justify-content: flex-start; padding: 240px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
+<div class="panel" style="max-width: 760px">
+<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">04 / Cenník</p>
+<h2 class="hud" style="margin: 0 0 24px; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Vyberte si, ako vysoko rásť</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px">
+
+<article class="card glass" style=" padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span class="hud" style="font-size: 12px; color: #A9B3A8">Semienko</span>
+<h3 class="hud" style="margin: 0; font-size: 22px">Analýza</h3>
+<p class="hud" style="margin: 0; font-size: 28px; font-weight: 700; color: var(--acc); text-transform: none">0 €</p>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.5; font-size: 15px; flex-grow: 1">Prehľad problémov vášho webu a odporúčania. Bez záväzkov.</p>
+<a href="#kontakt" class="hud btn" style="display: inline-flex; justify-content: center; align-items: center; min-height: 44px; border: 1px solid #EEF1EA; color: #EEF1EA; text-decoration: none; font-size: 13px; font-weight: 600">Mám záujem</a>
+</article>
+
+<article class="card glass" style=" padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span class="hud" style="font-size: 12px; color: #A9B3A8">Výhonok</span>
+<h3 class="hud" style="margin: 0; font-size: 22px">Štart</h3>
+<p class="hud" style="margin: 0; font-size: 28px; font-weight: 700; color: var(--acc); text-transform: none">od 390 €</p>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.5; font-size: 15px; flex-grow: 1">Jednostránkový web s formulárom, mobilnou verziou a základným SEO.</p>
+<a href="#kontakt" class="hud btn" style="display: inline-flex; justify-content: center; align-items: center; min-height: 44px; border: 1px solid #EEF1EA; color: #EEF1EA; text-decoration: none; font-size: 13px; font-weight: 600">Mám záujem</a>
+</article>
+
+<article class="card glass" style=" padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span class="hud" style="font-size: 12px; color: #A9B3A8">Strom</span>
+<h3 class="hud" style="margin: 0; font-size: 22px">Firma</h3>
+<p class="hud" style="margin: 0; font-size: 28px; font-weight: 700; color: var(--acc); text-transform: none">od 890 €</p>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.5; font-size: 15px; flex-grow: 1">Firemný web do 7 podstránok, viac jazykov, SEO základ a napojenie na Google.</p>
+<a href="#kontakt" class="hud btn" style="display: inline-flex; justify-content: center; align-items: center; min-height: 44px; border: 1px solid #EEF1EA; color: #EEF1EA; text-decoration: none; font-size: 13px; font-weight: 600">Mám záujem</a>
+</article>
+
+<article class="card glass" style=" padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span class="hud" style="font-size: 12px; color: #A9B3A8">Velikán</span>
+<h3 class="hud" style="margin: 0; font-size: 22px">Rast</h3>
+<p class="hud" style="margin: 0; font-size: 28px; font-weight: 700; color: var(--acc); text-transform: none">od 1 900 €</p>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.5; font-size: 15px; flex-grow: 1">Katalóg produktov, AI konzultant, integrácie. Pre firmy, ktoré chcú rásť.</p>
+<a href="#kontakt" class="hud btn" style="display: inline-flex; justify-content: center; align-items: center; min-height: 44px; border: 1px solid #EEF1EA; color: #EEF1EA; text-decoration: none; font-size: 13px; font-weight: 600">Mám záujem</a>
+</article>
+
+<article class="card glass" style=" padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span class="hud" style="font-size: 12px; color: #A9B3A8">Starostlivosť</span>
+<h3 class="hud" style="margin: 0; font-size: 22px">SEO správa</h3>
+<p class="hud" style="margin: 0; font-size: 28px; font-weight: 700; color: var(--acc); text-transform: none">od 190 €/mes.</p>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.5; font-size: 15px; flex-grow: 1">Pravidelné úpravy, obsah a sledovanie pozícií v Google aj v AI vyhľadávaní.</p>
+<a href="#kontakt" class="hud btn" style="display: inline-flex; justify-content: center; align-items: center; min-height: 44px; border: 1px solid #EEF1EA; color: #EEF1EA; text-decoration: none; font-size: 13px; font-weight: 600">Mám záujem</a>
+</article>
+
+</div>
+<p style="margin: 16px 0 0; color: #A9B3A8; font-size: 14px">Ceny sú orientačné, bez DPH. Presnú ponuku dostanete po bezplatnej analýze.</p>
+</div>
+</section>
+
+<!-- WHY ME (right) -->
+<section style="display: flex; justify-content: flex-end; padding: 240px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
+<div class="panel">
+<p class="hud" style="margin: 0 0 16px; font-size: 14px; color: var(--acc)">05 / Prečo ja</p>
+<p style="margin: 0; font-size: clamp(21px, 2.2vw, 28px); line-height: 1.45">Roky som predával stroje a pracoval vo výrobe. Viem, ako sa predáva priemyselný tovar — preto robím weby, ktoré prinášajú dopyty, nielen pekný dojem.</p>
+</div>
+</section>
+
+<!-- CONTACT (left) -->
+<section id="kontakt" style="display: flex; justify-content: flex-start; padding: 240px clamp(16px, 4vw, 48px) 200px; max-width: 1440px; margin: 0 auto">
+<div class="panel" style="display: flex; flex-direction: column; gap: 20px">
+<p class="hud" style="margin: 0; font-size: 14px; color: var(--acc)">06 / Bezplatná analýza</p>
+<h2 class="hud" style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Ukážte nám svoj web</h2>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.6">Do 3 pracovných dní dostanete prehľad, čo brzdí váš predaj — bez záväzkov.</p>
+<form style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px" data-form>
+<div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px"><label for="f-url" class="hud" style="font-size: 13px; color: #B9C2B7">Adresa webu</label><input id="f-url" type="url" placeholder="www.vasafirma.sk"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-name" class="hud" style="font-size: 13px; color: #B9C2B7">Meno</label><input id="f-name" type="text"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-contact" class="hud" style="font-size: 13px; color: #B9C2B7">E-mail alebo telefón</label><input id="f-contact" type="text"></div>
+<div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px"><label for="f-msg" class="hud" style="font-size: 13px; color: #B9C2B7">Čo vás trápi? (nepovinné)</label><textarea id="f-msg" rows="3"></textarea></div>
+<button type="submit" class="hud btn" style="grid-column: 1 / -1; min-height: 56px; background: var(--acc); color: #070B09; border: 0; cursor: pointer; font: 700 16px 'Chakra Petch', sans-serif; letter-spacing: .1em">Chcem bezplatnú analýzu →</button>
+</form>
+<div class="hud" style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; border-top: 1px solid rgba(255,255,255,.18); padding-top: 16px">
+<a href="https://t.me/Artbrl" style="color: #EEF1EA; text-decoration: none">Telegram <span style="color: var(--acc)">@Artbrl</span></a>
+<a href="mailto:info@burtsevwerk.eu" style="color: #EEF1EA; text-decoration: none">info@burtsevwerk.eu</a>
+<span style="color: #A9B3A8">Banská Bystrica</span>
+</div>
+</div>
+</section>
+
+<footer class="hud" style="pointer-events: auto; padding: 24px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: #A9B3A8; background: rgba(7,11,9,.85)">
+<span>© BurtsevWerk</span>
+<span>Weby, ktoré predávajú</span>
+</footer>
+</div>
+
+<!-- GAME-STYLE MENU -->
+<div id="menu" hidden>
+<div class="overlay" role="dialog" aria-modal="true" aria-label="Menu" style="position: fixed; inset: 0; z-index: 50; background: rgba(8,12,10,.4); backdrop-filter: blur(22px) saturate(140%); -webkit-backdrop-filter: blur(22px) saturate(140%); display: flex; flex-direction: column; padding: clamp(20px, 4vw, 48px); overflow-y: auto">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<span class="hud" style="font-size: 14px; color: var(--acc)">■ Pauza · BurtsevWerk</span>
+<button type="button" class="hud btn" data-act="close" aria-label="Zavrieť menu" style="min-width: 48px; min-height: 48px; background: transparent; border: 1px solid #EEF1EA; color: #EEF1EA; cursor: pointer; font: 600 16px 'Chakra Petch', sans-serif">✕</button>
+</div>
+<nav aria-label="Hlavné menu" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 40px 0">
+
+<a href="#top" data-act="close" class="mi hud d1" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
+<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">01</span>Analýza zadarmo
+</a>
+
+<a href="#problemy" data-act="close" class="mi hud d2" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
+<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">02</span>Čo nájdeme
+</a>
+
+<a href="#postup" data-act="close" class="mi hud d3" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
+<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">03</span>Postup
+</a>
+
+<a href="#pripad" data-act="close" class="mi hud d4" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
+<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">04</span>Prípad
+</a>
+
+<a href="#cennik" data-act="close" class="mi hud d5" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
+<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">05</span>Cenník
+</a>
+
+<a href="#kontakt" data-act="close" class="mi hud d6" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
+<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">06</span>Kontakt
+</a>
+
+</nav>
+<div class="hud" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #A9B3A8; border-top: 1px solid rgba(255,255,255,.18); padding-top: 16px">
+<span>Telegram @Artbrl</span>
+<span>SK · PL · EN</span>
+</div>
+</div>
+</div>
+
+</div>
+<script>
+(function(){
+class Hero {
+  constructor(){ this.prog=0; this.lastY=0; this.menu=false; this.frame=this.frame.bind(this); }
+  initPhoto(el, narrow) {
+    var self = this;
+    var cv = document.createElement('canvas');
+    cv.setAttribute('role', 'img'); cv.setAttribute('aria-label', el.getAttribute('aria-label') || '');
+    cv.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;display:block;background:#6fa8de';
+    el.removeAttribute('src');
+    el.parentNode.insertBefore(cv, el.nextSibling);
+    this.photo = true; this.narrow = narrow; this.pc = cv; this.ang = 0;
+    this.pcx = narrow ? .5 : .514; this.pcx2 = .524;
+    var gl = cv.getContext('webgl', { antialias: false, premultipliedAlpha: false });
+    var srcs = narrow
+      ? ['tree_v.webp', 'depth_v.png']
+      : ['tree.webp', 'depth.png'];
+    var ims = srcs.map(function () { return new Image(); }), n = 0;
+    ims.forEach(function (im, i) {
+      im.onload = function () { if (++n === ims.length) self.photoReady(gl, ims); };
+      im.src = srcs[i];
+    });
+  }
+  photoReady(gl, ims) {
+    this.pimg = ims[0]; this.two = ims.length > 2;
+    if (!gl) return;
+    var vs = 'attribute vec2 p;varying vec2 q;void main(){q=p*.5+.5;q.y=1.-q.y;gl_Position=vec4(p,0.,1.);}';
+    var fs = 'precision highp float;varying vec2 q;uniform sampler2D I,D,J,E;uniform vec2 S,O,S2,O2;uniform float C,C2,M;' +
+      'vec4 look(sampler2D T,sampler2D Z,vec2 uv,vec2 o){vec2 p=uv;for(int i=0;i<6;i++){float d=texture2D(Z,p).r;p=uv+o*(1.-d);}return texture2D(T,clamp(p,0.,1.));}' +
+      'void main(){vec4 a=look(I,D,(q-vec2(.5))*S+vec2(C,.5),O);' +
+      'if(M<.002){gl_FragColor=a;return;}' +
+      'vec4 b=look(J,E,(q-vec2(.5))*S2+vec2(C2,.5),O2);gl_FragColor=mix(a,b,M);}';
+    var sh = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
+    var pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, fs));
+    gl.linkProgram(pr);
+    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return;
+    gl.useProgram(pr);
+    var b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    var tex = function (unit, im) {
+      var t = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, t);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, im);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    };
+    tex(0, ims[0]); tex(1, ims[1]); tex(2, ims[this.two ? 2 : 0]); tex(3, ims[this.two ? 3 : 1]);
+    var U = function (n) { return gl.getUniformLocation(pr, n); };
+    gl.uniform1i(U('I'), 0); gl.uniform1i(U('D'), 1); gl.uniform1i(U('J'), 2); gl.uniform1i(U('E'), 3);
+    this.gl = gl; this.U = { S: U('S'), O: U('O'), S2: U('S2'), O2: U('O2'), C: U('C'), C2: U('C2'), M: U('M') };
+    this.pimg2 = ims[2];
+  }
+  photoFrame(ts, dt) {
+    var cv = this.pc, img = this.pimg; if (!img) return;
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    var cw = Math.round(cv.clientWidth * dpr), ch = Math.round(cv.clientHeight * dpr);
+    if (!cw || !ch) return;
+    if (cv.width !== cw || cv.height !== ch) { cv.width = cw; cv.height = ch; }
+    var p = Math.min(1, Math.max(0, this.prog)), ac = cw / ch;
+    var fit = function (im, amp) {
+      var ai = im.width / im.height, bx = ac < ai ? ac / ai : 1, by = ac < ai ? 1 : ai / ac, z = 1 / (1 - amp * .6);
+      return [bx / z, by / z];
+    };
+    if (this.two) {
+      var want = .5 - .5 * Math.cos(p * Math.PI * 2);
+      this.ang += (want - this.ang) * Math.min(1, dt * 3);
+      var a = this.ang, amp = .06;
+      var m = Math.min(1, Math.max(0, (a - .4) / .2)); m = m * m * (3 - 2 * m);
+      var s1 = fit(img, amp), s2 = fit(this.pimg2, amp);
+      if (this.gl) {
+        var gl = this.gl, U = this.U; gl.viewport(0, 0, cw, ch);
+        gl.uniform2f(U.S, s1[0], s1[1]); gl.uniform1f(U.C, this.pcx); gl.uniform2f(U.O, -a * amp * s1[0], 0);
+        gl.uniform2f(U.S2, s2[0], s2[1]); gl.uniform1f(U.C2, this.pcx2); gl.uniform2f(U.O2, (1 - a) * amp * s2[0], 0);
+        gl.uniform1f(U.M, m);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      }
+      return;
+    }
+    var want1 = Math.sin(p * Math.PI * 2) + .12 * Math.sin(ts / 2400);
+    this.ang += (want1 - this.ang) * Math.min(1, dt * 3);
+    var amp1 = .05, s = fit(img, amp1);
+    if (this.gl) {
+      var g = this.gl, V = this.U; g.viewport(0, 0, cw, ch);
+      g.uniform2f(V.S, s[0], s[1]); g.uniform1f(V.C, this.pcx);
+      g.uniform2f(V.O, this.ang * amp1 * Math.max(s[0], .5), -Math.abs(this.ang) * .004);
+      g.uniform1f(V.M, 0);
+      g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
+    } else {
+      var c2 = this.p2d || (this.p2d = cv.getContext('2d'));
+      var k = Math.max(cw / img.width, ch / img.height) * 1.04, dw = img.width * k, dh = img.height * k;
+      c2.drawImage(img, cw * .5 - this.pcx * dw, (ch - dh) / 2, dw, dh);
+    }
+  }
+
+  frame(ts){
+    if (this.lastTs == null) this.lastTs = ts;
+    var dt = Math.min(.05, Math.max(0, (ts - this.lastTs) / 1000)); this.lastTs = ts;
+    this.photoFrame(ts, dt);
+    requestAnimationFrame(this.frame);
+  }
+}
+var h=new Hero(), bar=document.querySelector('.bar'), menu=document.getElementById('menu');
+function onScroll(){
+  var y=window.scrollY||0, max=Math.max(1,(document.documentElement.scrollHeight||1)-window.innerHeight);
+  h.prog=Math.min(1,Math.max(0,y/max));
+  var hide=y>h.lastY&&y>140&&!h.menu; bar.classList.toggle('hidden',hide); h.lastY=y;
+}
+window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+var narrow=window.matchMedia&&window.matchMedia('(max-aspect-ratio: 1/1)').matches;
+h.initPhoto(document.getElementById('tree'),narrow); requestAnimationFrame(h.frame);
+document.addEventListener('click',function(e){
+  var t=e.target.closest('[data-act],[data-lang]'); if(!t) return;
+  if(t.dataset.act==='open'){h.menu=true;menu.hidden=false;bar.classList.remove('hidden');}
+  if(t.dataset.act==='close'){h.menu=false;menu.hidden=true;}
+  if(t.dataset.lang){document.querySelectorAll('[data-lang]').forEach(function(b){b.classList.toggle('on',b===t)});}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden){h.menu=false;menu.hidden=true;}});
+document.querySelectorAll('form[data-form]').forEach(function(f){
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var g=function(id){var el=f.querySelector('#'+id);return el?el.value:''};
+    var lines=['Web: '+(g('f-url')||g('hero-url')),'Meno: '+g('f-name'),'Kontakt: '+g('f-contact'),'Správa: '+g('f-msg')];
+    location.href='mailto:info@burtsevwerk.eu?subject='+encodeURIComponent('Bezplatná analýza webu')+'&body='+encodeURIComponent(lines.join('\n'));
+  });
+});
+})();
+</script>
+</body>
+</html>
