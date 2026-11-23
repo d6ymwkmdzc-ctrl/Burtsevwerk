@@ -48,14 +48,21 @@ a{color:#FFC977}a:hover{color:#FFE2B3}
  linear-gradient(90deg,rgba(9,13,10,.34) 0%,rgba(9,13,10,.20) 45%,rgba(9,13,10,.06) 80%,rgba(9,13,10,0) 100%)}}
 .bw .hero-txt{text-shadow:0 1px 2px rgba(0,0,0,.45),0 2px 16px rgba(0,0,0,.42)}
 .bw .hero-txt .btn{text-shadow:none}
+.bw .hero-glass{position:relative;isolation:isolate;padding:18px 20px;border:1px solid rgba(255,255,255,.18);border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08);text-shadow:0 1px 2px rgba(0,0,0,.35)}
+@media (max-width:560px){
+.bw #top{align-items:flex-start!important;min-height:0!important;padding-top:calc(46vh - 72px)!important;padding-bottom:56px!important}
+@supports (height:1svh){.bw #top{padding-top:calc(46svh - 72px)!important}}
+.bw .hero-txt{gap:18px!important}
+.bw .hero-glass{padding:14px 16px;font-size:16px!important;line-height:1.5!important}}
+
 /* iOS: stage covers the full (large) viewport, no coloured strip under Safari toolbar */
 @supports (height:100lvh){.bw .stage{height:100lvh!important}.bw .layer{margin-top:-100lvh!important}}
 html{background:#070B09}
 /* Panels: lighter glass while scrolling, dark glass at rest */
-.bw .panel::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:rgba(12,18,16,.8);opacity:1;transition:opacity .6s ease .08s}
-@supports ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.bw .panel::before{background:rgba(12,18,16,.58);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}}
-.bw.scrolling .panel::before{opacity:.5;transition:opacity .25s ease}
-@media (prefers-reduced-motion:reduce){.bw .panel::before{transition:none}}
+.bw .panel::before,.bw .hero-glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:rgba(12,18,16,.8);opacity:1;transition:opacity .6s ease .08s}
+@supports ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.bw .panel::before,.bw .hero-glass::before{background:rgba(12,18,16,.58);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}}
+.bw.scrolling .panel::before,.bw.scrolling .hero-glass::before{opacity:.5;transition:opacity .25s ease}
+@media (prefers-reduced-motion:reduce){.bw .panel::before,.bw .hero-glass::before{transition:none}}
 
 @media (max-width:560px){.bw .hint{display:none}}
 .bw .tree:active{cursor:grabbing}
@@ -117,7 +124,7 @@ MENU
 <div class="hero-txt" style="pointer-events: auto; max-width: 680px; display: flex; flex-direction: column; gap: 24px">
 <p class="hud" style="margin: 0; font-size: 14px; color: #FFB547">● Digitálne riešenia bez hraníc <span class="blink">_</span></p>
 <h1 class="hud" style="margin: 0; font-size: clamp(44px, 6.4vw, 96px); line-height: .95; letter-spacing: .01em; text-transform: none; text-wrap: balance; color: #F7F5ED">Weby, ktoré vystúpia z radu.</h1>
-<p style="margin: 0; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.55; color: #E5E7E3">Tvoríme moderné webové stránky, interaktívne aplikácie a inteligentné digitálne riešenia. Spájame originálny dizajn, moderné technológie a umelú inteligenciu do projektov, ktoré majú zmysel.</p>
+<p class="hero-glass" style="margin: 0; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.55; color: #E5E7E3">Tvoríme moderné webové stránky, interaktívne aplikácie a inteligentné digitálne riešenia. Spájame originálny dizajn, moderné technológie a umelú inteligenciu do projektov, ktoré majú zmysel.</p>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
 <a href="#pripad" class="hud btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; background: #FFB547; color: #171A16; text-decoration: none; font: 700 15px 'Chakra Petch', sans-serif; letter-spacing: .1em">Pozrieť našu tvorbu →</a>
 <a href="#kontakt" class="hud" style="display: inline-flex; align-items: center; min-height: 44px; color: #F7F5ED; font-size: 14px; font-weight: 600; letter-spacing: .1em; text-decoration: underline; text-decoration-color: rgba(255,181,71,.8); text-decoration-thickness: 1px; text-underline-offset: 7px">Máte vlastný nápad?</a>
