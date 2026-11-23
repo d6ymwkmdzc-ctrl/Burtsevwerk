@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>BurtsevWerk — weby, ktoré predávajú</title>
-<meta name="description" content="Bezplatná analýza webu: zistíme, prečo váš web nepredáva. Rýchle weby, SEO a viditeľnosť v Google aj v AI pre firmy na Slovensku.">
+<title>BurtsevWerk — weby, ktoré vystúpia z radu</title>
+<meta name="description" content="Moderné webové stránky, interaktívne aplikácie a digitálne riešenia s umelou inteligenciou. Originálny dizajn, SEO a nájditeľnosť v Google aj v ChatGPT.">
 <link rel="canonical" href="https://burtsevwerk.eu/">
-<meta property="og:title" content="BurtsevWerk — weby, ktoré predávajú">
-<meta property="og:description" content="Bezplatná analýza webu. Kde je problém?">
+<meta property="og:title" content="BurtsevWerk — weby, ktoré vystúpia z radu">
+<meta property="og:description" content="Moderné weby, aplikácie a digitálne riešenia s AI. Originálny dizajn, ktorý vystúpi z radu.">
 <meta property="og:image" content="https://burtsevwerk.eu/tree.webp">
 <meta name="theme-color" content="#3E6A2A">
 <link rel="preload" as="image" href="tree.webp" media="(min-aspect-ratio: 1/1)">
@@ -34,18 +34,37 @@ a{color:#FFC977}a:hover{color:#FFE2B3}
 .bw .overlay{animation:ovIn .35s ease-out both}
 @keyframes ovIn{from{opacity:0}to{opacity:1}}
 .bw .mi{opacity:0;animation:miIn .5s cubic-bezier(.2,.8,.2,1) both;transition:color .15s,padding .2s}
-.bw .mi{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:10px 22px;margin-bottom:8px}
-.bw .mi:hover{color:var(--acc);padding-left:34px;background:rgba(255,255,255,.14)}
 .bw .d1{animation-delay:.05s}.bw .d2{animation-delay:.1s}.bw .d3{animation-delay:.15s}.bw .d4{animation-delay:.2s}.bw .d5{animation-delay:.25s}.bw .d6{animation-delay:.3s}
 @keyframes miIn{from{opacity:0;transform:translateX(-60px) skewX(-12deg);clip-path:inset(0 100% 0 0)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
-.bw .pill{cursor:pointer;border:1px solid rgba(255,255,255,.28);border-radius:10px;background:rgba(255,255,255,.1);color:#C2CBC0;padding:8px 10px;min-width:44px;min-height:44px;font:inherit}
-.bw .pill.on{border-color:var(--acc);color:#070B09;background:var(--acc)}
-.bw input,.bw textarea{width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:12px;color:#EEF1EA;padding:14px 16px;font:16px Inter,sans-serif}
-.bw input:focus,.bw textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
-.bw input::placeholder,.bw textarea::placeholder{color:#C9D1C7}
 .bw .tree{cursor:grab;touch-action:pan-y}
-@media (max-width:560px){.bw .panel{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}.bw .langs{display:none}.bw section:not(#top){padding-top:75vh!important}.bw .panel{padding:20px;border-radius:18px}}
+@media (max-width:560px){.bw .panel{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}.bw .langs{display:none!important}.bw section:not(#top){padding-top:75vh!important}.bw .panel{padding:20px;border-radius:18px}}
+.bw .shade{position:absolute;inset:0;pointer-events:none;background:
+ radial-gradient(120% 80% at 12% 8%,rgba(255,240,205,.22),rgba(255,240,205,0) 55%),
+ linear-gradient(180deg,rgba(9,13,10,.32) 0%,rgba(9,13,10,0) 14%,rgba(9,13,10,0) 30%,rgba(9,13,10,.12) 50%,rgba(9,13,10,.24) 74%,rgba(9,13,10,.46) 100%),
+ linear-gradient(90deg,rgba(9,13,10,.40) 0%,rgba(9,13,10,.24) 30%,rgba(9,13,10,.07) 55%,rgba(9,13,10,0) 72%)}
+@media (max-width:760px){.bw .shade{background:
+ radial-gradient(120% 60% at 12% 4%,rgba(255,240,205,.12),rgba(255,240,205,0) 50%),
+ linear-gradient(180deg,rgba(9,13,10,.30) 0%,rgba(9,13,10,0) 12%,rgba(9,13,10,.04) 22%,rgba(9,13,10,.18) 34%,rgba(9,13,10,.20) 60%,rgba(9,13,10,.30) 80%,rgba(9,13,10,.48) 100%),
+ linear-gradient(90deg,rgba(9,13,10,.34) 0%,rgba(9,13,10,.20) 45%,rgba(9,13,10,.06) 80%,rgba(9,13,10,0) 100%)}}
+.bw .hero-txt{text-shadow:0 1px 2px rgba(0,0,0,.45),0 2px 16px rgba(0,0,0,.42)}
+.bw .hero-txt .btn{text-shadow:none}
+@media (max-width:560px){.bw .hint{display:none}}
 .bw .tree:active{cursor:grabbing}
+/* Dark Glass UI: nav, language switch, inputs */
+.bw .pill,.bw .glass-ui,.bw input,.bw textarea{background:rgba(12,18,16,.78);border:1px solid rgba(255,255,255,.18);color:#F7F5ED;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+@supports ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+.bw .pill,.bw .glass-ui,.bw input,.bw textarea{background:rgba(12,18,16,.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}}
+.bw .pill{border-radius:12px;padding:8px 10px;min-width:44px;min-height:44px;font:inherit;cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.bw .pill:hover{border-color:rgba(255,181,71,.6);color:#FFB547}
+.bw .pill.on{background:#FFB547;border-color:#FFB547;color:#171A16}
+.bw .glass-ui{border-radius:12px}
+.bw .glass-ui:hover{border-color:rgba(255,181,71,.6)}
+.bw input,.bw textarea{width:100%;border-radius:12px;padding:14px 16px;font:16px Inter,sans-serif}
+.bw input:focus,.bw textarea:focus{outline:none;border-color:#FFB547;box-shadow:0 0 0 3px rgba(255,181,71,.22)}
+.bw input::placeholder,.bw textarea::placeholder{color:rgba(247,245,237,.55)}
+.bw .mi{background:rgba(12,18,16,.55);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:10px 22px;margin-bottom:8px}
+.bw .mi:hover{color:#FFB547;padding-left:34px;background:rgba(12,18,16,.7);border-color:rgba(255,181,71,.5)}
+
 @media (prefers-reduced-motion:reduce){.bw *{animation:none!important}}
 </style>
 </head>
@@ -55,8 +74,8 @@ a{color:#FFC977}a:hover{color:#FFE2B3}
 <!-- 3D TREE: sticky full-screen canvas behind everything -->
 <div style="position: sticky; top: 0; height: 100vh; z-index: 0">
 <video class="tree" id="tree" muted="" playsinline="" preload="auto" aria-label="Let ponad oblaky k obrovskému stromu na skale a okolo neho" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #6fa8de"></video>
-<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 80% at 12% 8%, rgba(255,240,205,.28), rgba(255,240,205,0) 55%), linear-gradient(rgba(7,11,9,.35), rgba(7,11,9,0) 16%), linear-gradient(0deg, rgba(225,236,246,.35), rgba(225,236,246,0) 35%)"></div>
-<div aria-hidden="true" class="hud" style="position: absolute; right: clamp(16px, 4vw, 48px); bottom: 20px; font-size: 12px; color: #8C978B">Scrollujte · obíďte strom</div>
+<div aria-hidden="true" class="shade"></div>
+<div aria-hidden="true" class="hud hint" style="position: absolute; right: clamp(16px, 4vw, 48px); bottom: 20px; font-size: 12px; color: rgba(229,231,227,.72); text-shadow: 0 1px 6px rgba(0,0,0,.5)">Scrollujte · obíďte strom</div>
 </div>
 
 <!-- CONTENT LAYER over the tree -->
@@ -77,7 +96,7 @@ a{color:#FFC977}a:hover{color:#FFE2B3}
 <button type="button" class="pill " data-lang="EN">EN</button>
 
 </div>
-<button type="button" class="hud btn" data-act="open" aria-label="Otvoriť menu" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px; background: rgba(7,11,9,.6); color: #EEF1EA; border: 1px solid #EEF1EA; cursor: pointer; font: 600 14px 'Chakra Petch', sans-serif; letter-spacing: .12em">
+<button type="button" class="hud btn glass-ui" data-act="open" aria-label="Otvoriť menu" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px; cursor: pointer; font: 600 14px 'Chakra Petch', sans-serif; letter-spacing: .12em">
 <svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M6 7h16M0 13h22" stroke="currentColor" stroke-width="2"></path></svg>
 MENU
 </button>
@@ -86,16 +105,15 @@ MENU
 
 <!-- HERO -->
 <section id="top" style="min-height: 820px; display: flex; align-items: center; padding: 40px clamp(16px, 4vw, 48px) 80px; max-width: 1440px; margin: 0 auto">
-<div style="pointer-events: auto; max-width: 640px; display: flex; flex-direction: column; gap: 24px; text-shadow: 0 2px 24px rgba(0,0,0,.85)">
-<p class="hud" style="margin: 0; font-size: 14px; color: var(--acc)">● Korene sú silné <span class="blink">_</span></p>
-<h1 class="hud" style="margin: 0; font-size: clamp(52px, 8vw, 116px); line-height: .92; letter-spacing: .01em; text-transform: none">Kde je<br>problém?</h1>
-<p style="margin: 0; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.5; color: #D3DAD1">Vaša firma rástla roky — a zrazu sa zastavila? Nájdeme, čo brzdí váš web. Analýza je <strong style="color: #EEF1EA">zadarmo</strong>.</p>
-<form style="display: flex; flex-wrap: wrap; gap: 10px" data-form>
-<label for="hero-url" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Adresa vášho webu</label>
-<input id="hero-url" type="url" placeholder="www.vasafirma.sk" style="flex: 1 1 260px">
-<button type="submit" class="hud btn" style="min-height: 52px; padding: 0 24px; background: var(--acc); color: #070B09; border: 0; cursor: pointer; font: 700 15px 'Chakra Petch', sans-serif; letter-spacing: .1em">Spustiť analýzu →</button>
-</form>
-<p class="hud" style="margin: 0; font-size: 12px; color: #A9B3A8">Weby · SEO · nájditeľnosť v Google aj v ChatGPT · SK / PL / EN</p>
+<div class="hero-txt" style="pointer-events: auto; max-width: 680px; display: flex; flex-direction: column; gap: 24px">
+<p class="hud" style="margin: 0; font-size: 14px; color: #FFB547">● Digitálne riešenia bez hraníc <span class="blink">_</span></p>
+<h1 class="hud" style="margin: 0; font-size: clamp(44px, 6.4vw, 96px); line-height: .95; letter-spacing: .01em; text-transform: none; text-wrap: balance; color: #F7F5ED">Weby, ktoré vystúpia z radu.</h1>
+<p style="margin: 0; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.55; color: #E5E7E3">Tvoríme moderné webové stránky, interaktívne aplikácie a inteligentné digitálne riešenia. Spájame originálny dizajn, moderné technológie a umelú inteligenciu do projektov, ktoré majú zmysel.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
+<a href="#pripad" class="hud btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; background: #FFB547; color: #171A16; text-decoration: none; font: 700 15px 'Chakra Petch', sans-serif; letter-spacing: .1em">Pozrieť našu tvorbu →</a>
+<a href="#kontakt" class="hud" style="display: inline-flex; align-items: center; min-height: 44px; color: #F7F5ED; font-size: 14px; font-weight: 600; letter-spacing: .1em; text-decoration: underline; text-decoration-color: rgba(255,181,71,.8); text-decoration-thickness: 1px; text-underline-offset: 7px">Máte vlastný nápad?</a>
+</div>
+<p class="hud" style="margin: 0; font-size: 12px; color: rgba(229,231,227,.86); text-shadow: 0 1px 2px rgba(0,0,0,.6), 0 1px 10px rgba(0,0,0,.45)">Weby · SEO · nájditeľnosť v Google aj v ChatGPT · SK / PL / EN</p>
 </div>
 </section>
 
@@ -272,7 +290,7 @@ MENU
 
 <footer class="hud" style="pointer-events: auto; padding: 24px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: #A9B3A8; background: rgba(7,11,9,.85)">
 <span>© BurtsevWerk</span>
-<span>Weby, ktoré predávajú</span>
+<span>Weby, ktoré vystúpia z radu</span>
 </footer>
 </div>
 
@@ -281,7 +299,7 @@ MENU
 <div class="overlay" role="dialog" aria-modal="true" aria-label="Menu" style="position: fixed; inset: 0; z-index: 50; background: rgba(8,12,10,.4); backdrop-filter: blur(22px) saturate(140%); -webkit-backdrop-filter: blur(22px) saturate(140%); display: flex; flex-direction: column; padding: clamp(20px, 4vw, 48px); overflow-y: auto">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px">
 <span class="hud" style="font-size: 14px; color: var(--acc)">■ Pauza · BurtsevWerk</span>
-<button type="button" class="hud btn" data-act="close" aria-label="Zavrieť menu" style="min-width: 48px; min-height: 48px; background: transparent; border: 1px solid #EEF1EA; color: #EEF1EA; cursor: pointer; font: 600 16px 'Chakra Petch', sans-serif">✕</button>
+<button type="button" class="hud btn glass-ui" data-act="close" aria-label="Zavrieť menu" style="min-width: 48px; min-height: 48px; cursor: pointer; font: 600 16px 'Chakra Petch', sans-serif">✕</button>
 </div>
 <nav aria-label="Hlavné menu" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 40px 0">
 
