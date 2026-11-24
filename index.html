@@ -14,7 +14,7 @@
 <link rel="preload" as="image" href="tree.webp" media="(min-aspect-ratio: 1/1)">
 <link rel="preload" as="image" href="tree_v.webp" media="(max-aspect-ratio: 1/1)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=Inter:wght@400;500;600;800&amp;display=swap" rel="stylesheet">
 <style>
 video.tree::-webkit-media-controls, video.tree::-webkit-media-controls-start-playback-button, video.tree::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; opacity: 0; }
 body{margin:0;background:#070B09}
@@ -52,6 +52,10 @@ a{color:#FFC977}a:hover{color:#FFE2B3}
 .bw select{width:100%;border-radius:12px;padding:14px 16px;font:16px Inter,sans-serif;color:#F7F5ED;background:rgba(12,18,16,.78);border:1px solid rgba(255,255,255,.18);color-scheme:dark;-webkit-appearance:none;appearance:none;background-image:linear-gradient(45deg,transparent 50%,#FFB547 50%),linear-gradient(135deg,#FFB547 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat}
 .bw select:focus{outline:none;border-color:#FFB547;box-shadow:0 0 0 3px rgba(255,181,71,.22)}
 .bw .tg-btn{border-radius:12px}
+.bw .brand{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Helvetica Neue",Arial,sans-serif;text-transform:uppercase;letter-spacing:.005em;font-size:22px;line-height:1;color:#F7F5ED;white-space:nowrap;-webkit-font-smoothing:antialiased}
+.bw .brand b{font-weight:800}
+.bw .brand span{font-weight:400;color:#FFB547;margin-left:.06em}
+@media (max-width:380px){.bw .brand{font-size:19px}}
 .bw .sr-only,.bw .hp{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;padding:0;margin:-1px}
 .bw .ai-glow{position:relative;border:1px solid rgba(255,181,71,.55);background:rgba(12,18,16,.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 0 0 1px rgba(255,181,71,.12),0 0 26px rgba(255,181,71,.22);animation:aiGlow 3.2s ease-in-out infinite}
 @keyframes aiGlow{0%,100%{box-shadow:0 0 0 1px rgba(255,181,71,.12),0 0 18px rgba(255,181,71,.16)}50%{box-shadow:0 0 0 1px rgba(255,181,71,.3),0 0 34px rgba(255,181,71,.34)}}
@@ -131,7 +135,7 @@ html{background:#070B09}
 <header class="bar" style="pointer-events: auto; position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px clamp(16px, 4vw, 48px); background: linear-gradient(rgba(7,11,9,.85), rgba(7,11,9,0))">
 <a href="#top" class="hud" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #EEF1EA; font-size: 20px; font-weight: 700">
 <span aria-hidden="true" style="width: 34px; height: 34px; border: 2px solid var(--acc); display: grid; place-items: center; color: var(--acc); font-size: 16px; transform: rotate(45deg)"><span style="transform: rotate(-45deg)">W</span></span>
-<span>Burtsev<span style="color: var(--acc)">Werk</span></span>
+<span class="brand"><b>Burtsev</b><span>Werk</span></span>
 </a>
 <div style="display: flex; align-items: center; gap: 10px">
 <div class="hud langs" style="display: flex; gap: 4px; font-size: 13px" role="group" aria-label="Jazyk">
