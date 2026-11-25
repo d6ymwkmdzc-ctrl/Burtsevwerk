@@ -102,9 +102,9 @@ a{color:#FFC977}a:hover{color:#FFE2B3}
 @supports (height:100lvh){.bw .stage{height:100lvh!important}.bw .layer{margin-top:-100lvh!important}}
 html{background:#070B09}
 /* Panels: lighter glass while scrolling, dark glass at rest */
-.bw .panel::before,.bw .hero-glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:rgba(12,18,16,.8);opacity:1;transition:opacity .6s ease .08s}
+.bw .panel::before,.bw .hero-glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:rgba(12,18,16,.8);opacity:1;transition:opacity .25s ease}
 @supports ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.bw .panel::before,.bw .hero-glass::before{background:rgba(12,18,16,.58);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}}
-.bw.scrolling .panel::before,.bw.scrolling .hero-glass::before{opacity:.5;transition:opacity .25s ease}
+.bw.scrolling .panel::before,.bw.scrolling .hero-glass::before{opacity:.5;transition:opacity .12s ease}
 @media (prefers-reduced-motion:reduce){.bw .panel::before,.bw .hero-glass::before{transition:none}}
 
 @media (max-width:560px){.bw .hint{display:none}}
@@ -532,7 +532,7 @@ function onScroll(){
   var hide=y>h.lastY&&y>140&&!h.menu; bar.classList.toggle('hidden',hide); h.lastY=y;
 }
 window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
-var bwRoot=document.querySelector('.bw'),bwT;window.addEventListener('scroll',function(){if(!bwRoot)return;bwRoot.classList.add('scrolling');clearTimeout(bwT);bwT=setTimeout(function(){bwRoot.classList.remove('scrolling')},180)},{passive:true});
+var bwRoot=document.querySelector('.bw'),bwT;window.addEventListener('scroll',function(){if(!bwRoot)return;bwRoot.classList.add('scrolling');clearTimeout(bwT);bwT=setTimeout(function(){bwRoot.classList.remove('scrolling')},90)},{passive:true});
 var narrow=window.matchMedia&&window.matchMedia('(max-aspect-ratio: 1/1)').matches;
 h.initPhoto(document.getElementById('tree'),narrow); requestAnimationFrame(h.frame);
 document.addEventListener('click',function(e){
