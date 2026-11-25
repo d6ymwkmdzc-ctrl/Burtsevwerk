@@ -35,7 +35,7 @@ a{color:#FFC977}a:hover{color:#FFE2B3}
 .bw .overlay{animation:ovIn .35s ease-out both}
 @keyframes ovIn{from{opacity:0}to{opacity:1}}
 .bw .mi{opacity:0;animation:miIn .5s cubic-bezier(.2,.8,.2,1) both;transition:color .15s,padding .2s}
-.bw .d1{animation-delay:.05s}.bw .d2{animation-delay:.1s}.bw .d3{animation-delay:.15s}.bw .d4{animation-delay:.2s}.bw .d5{animation-delay:.25s}.bw .d6{animation-delay:.3s}
+.bw .d1{animation-delay:.05s}.bw .d2{animation-delay:.1s}.bw .d3{animation-delay:.15s}.bw .d4{animation-delay:.2s}.bw .d5{animation-delay:.25s}.bw .d6{animation-delay:.3s}.bw .d8{animation-delay:.4s}
 @keyframes miIn{from{opacity:0;transform:translateX(-60px) skewX(-12deg);clip-path:inset(0 100% 0 0)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
 .bw .tree{cursor:grab;touch-action:pan-y}
 @media (max-width:560px){.bw .langs{display:none!important}.bw section:not(#top){padding-top:12vh!important}.bw .panel{padding:20px;border-radius:18px}}
@@ -169,7 +169,7 @@ MENU
 <h1 class="hud" style="margin: 0; font-size: clamp(44px, 6.4vw, 96px); line-height: .95; letter-spacing: .01em; text-transform: none; text-wrap: balance; color: #F7F5ED">Weby, ktoré vystúpia z radu.</h1>
 <p class="hero-glass" style="margin: 0; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.55; color: #E5E7E3">Tvoríme moderné webové stránky, interaktívne aplikácie a inteligentné digitálne riešenia. Spájame originálny dizajn, moderné technológie a umelú inteligenciu do projektov, ktoré majú zmysel.</p>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
-<a href="#pripad" class="hud btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; background: #FFB547; color: #171A16; text-decoration: none; font: 700 15px 'Chakra Petch', sans-serif; letter-spacing: .1em">Pozrieť našu tvorbu →</a>
+<a href="#ukazky" class="hud btn" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; background: #FFB547; color: #171A16; text-decoration: none; font: 700 15px 'Chakra Petch', sans-serif; letter-spacing: .1em">Pozrieť našu tvorbu →</a>
 <a href="#kontakt" class="hud" style="display: inline-flex; align-items: center; min-height: 44px; color: #F7F5ED; font-size: 14px; font-weight: 600; letter-spacing: .1em; text-decoration: underline; text-decoration-color: rgba(255,181,71,.8); text-decoration-thickness: 1px; text-underline-offset: 7px">Máte vlastný nápad?</a>
 </div>
 <a href="#problemy" class="hud ai-chip ai-glow" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px; border-radius: 12px; color: #F7F5ED; text-decoration: none; font-size: 13px; letter-spacing: .08em"><span style="color: #FFB547">✦</span> Novinka: AI analýza webu za 30 s <span style="color: #FFB547">→</span></a>
@@ -276,10 +276,27 @@ MENU
 </div>
 </section>
 
+<!-- SAMPLES (left) -->
+<section id="ukazky" style="display: flex; justify-content: flex-start; padding: 120px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
+<div class="panel" style="max-width: 900px; display: flex; flex-direction: column; gap: 18px">
+<p class="hud" style="margin: 0; font-size: 14px; color: var(--acc)">04 / Ukážky</p>
+<h2 class="hud" style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Čo pre vás vieme postaviť</h2>
+<article class="card glass" style="padding: 0; overflow: hidden; display: flex; flex-direction: column">
+<a href="ukazka-ambulancia.webp" target="_blank" rel="noopener" style="display: block; background: #fff"><img src="ukazka-ambulancia.webp" srcset="ukazka-ambulancia-sm.webp 820w, ukazka-ambulancia.webp 1640w" sizes="(max-width: 900px) 100vw, 860px" width="1640" height="1000" loading="lazy" alt="Ukážka webu pre ambulanciu na počítači a v mobile: AI asistent, cvičenia, knihy autora" style="display: block; width: 100%; height: auto"></a>
+<div style="padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px">
+<p class="hud" style="margin: 0; font-size: 12px; color: var(--acc)">Ukážka 01 · návrh</p>
+<h3 class="hud" style="margin: 0; font-size: 22px; text-transform: none; letter-spacing: 0">Web vizitka pre ambulanciu</h3>
+<p style="margin: 0; color: #B9C2B7; line-height: 1.6; font-size: 15px">Pre lekára, fyzioterapeuta či súkromnú ambulanciu. AI asistent podľa ťažkostí pacienta odporučí cvičenie, audio návody sa dajú hneď vypočuť, autor predáva vlastné knihy — v slovenčine aj ďalších jazykoch, na počítači aj v mobile.</p>
+<a href="#kontakt" class="hud btn" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border: 1px solid var(--acc); color: var(--acc); text-decoration: none; font-size: 14px; font-weight: 600">Chcem podobný web →</a>
+</div>
+</article>
+</div>
+</section>
+
 <!-- PRICES (left) -->
-<section id="cennik" style="display: flex; justify-content: flex-start; padding: 120px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
+<section id="cennik" style="display: flex; justify-content: flex-end; padding: 120px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
 <div class="panel" style="max-width: 900px">
-<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">04 / Cenník</p>
+<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">05 / Cenník</p>
 <h2 class="hud" style="margin: 0 0 24px; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Cena webu — jednoduché ceny</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
 <article class="card glass" style="padding: 22px; display: flex; flex-direction: column; gap: 10px">
@@ -306,9 +323,9 @@ MENU
 </section>
 
 <!-- WHY CUSTOM (right) -->
-<section id="preco" style="display: flex; justify-content: flex-end; padding: 120px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
+<section id="preco" style="display: flex; justify-content: flex-start; padding: 120px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
 <div class="panel" style="max-width: 900px">
-<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">05 / Prečo na mieru</p>
+<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">06 / Prečo na mieru</p>
 <h2 class="hud" style="margin: 0 0 24px; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Šablóna má hranice. Web na mieru nemá.</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
 <article class="card glass" style="padding: 22px; display: flex; flex-direction: column; gap: 10px">
@@ -329,9 +346,9 @@ MENU
 </section>
 
 <!-- FAQ (left) -->
-<section id="otazky" style="display: flex; justify-content: flex-start; padding: 120px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
+<section id="otazky" style="display: flex; justify-content: flex-end; padding: 120px clamp(16px, 4vw, 48px) 0; max-width: 1440px; margin: 0 auto">
 <div class="panel">
-<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">06 / Časté otázky</p>
+<p class="hud" style="margin: 0 0 12px; font-size: 14px; color: var(--acc)">07 / Časté otázky</p>
 <h2 class="hud" style="margin: 0 0 20px; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Tvorba web stránok — otázky a odpovede</h2>
 <details class="faq"><summary>Koľko stojí tvorba web stránky?</summary><p>Jednoduchá webová vizitka začína od 290 €, firemný web s katalógom od 690 €. Viac jazykov či funkcií cenu zvýši. Presnú cenu povieme po krátkej konzultácii — vopred a bez skrytých poplatkov.</p></details>
 <details class="faq"><summary>Ako dlho trvá tvorba webu?</summary><p>Jednoduchý web zvyčajne 1 – 2 týždne, firemný web s katalógom 3 – 6 týždňov. Termín dostanete vopred.</p></details>
@@ -349,9 +366,9 @@ MENU
 </section>
 
 <!-- CONTACT (right) -->
-<section id="kontakt" style="display: flex; justify-content: flex-end; padding: 120px clamp(16px, 4vw, 48px) 200px; max-width: 1440px; margin: 0 auto">
+<section id="kontakt" style="display: flex; justify-content: flex-start; padding: 120px clamp(16px, 4vw, 48px) 200px; max-width: 1440px; margin: 0 auto">
 <div class="panel" style="display: flex; flex-direction: column; gap: 20px">
-<p class="hud" style="margin: 0; font-size: 14px; color: var(--acc)">07 / Kontakt</p>
+<p class="hud" style="margin: 0; font-size: 14px; color: var(--acc)">08 / Kontakt</p>
 <h2 class="hud" style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); text-transform: none; letter-spacing: 0">Máte nápad? Poďme ho zrealizovať</h2>
 <p style="margin: 0; color: #B9C2B7; line-height: 1.6">Napíšte, čo potrebujete — nový web, redizajn, webovú aplikáciu alebo AI chatbot pre firmu. Nezáväzná konzultácia je zdarma, ozveme sa zvyčajne do 24 hodín. Osobne sa stretneme v Banskej Bystrici, vo Zvolene či v Brezne, online v celom Banskobystrickom kraji.</p>
 <form style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px" data-form>
@@ -403,16 +420,20 @@ MENU
 <span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">04</span>Prípad
 </a>
 
-<a href="#cennik" data-act="close" class="mi hud d5" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
-<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">05</span>Cenník
+<a href="#ukazky" data-act="close" class="mi hud d5" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
+<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">05</span>Ukážky
 </a>
 
-<a href="#otazky" data-act="close" class="mi hud d6" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
-<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">06</span>Otázky
+<a href="#cennik" data-act="close" class="mi hud d6" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
+<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">06</span>Cenník
 </a>
 
-<a href="#kontakt" data-act="close" class="mi hud d7" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
-<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">07</span>Kontakt
+<a href="#otazky" data-act="close" class="mi hud d7" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
+<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">07</span>Otázky
+</a>
+
+<a href="#kontakt" data-act="close" class="mi hud d8" style="display: flex; align-items: baseline; gap: 20px; color: #EEF1EA; text-decoration: none; font-size: clamp(28px, 5vw, 60px); font-weight: 700; line-height: 1.15; text-transform: none; letter-spacing: 0">
+<span style="font-size: 16px; color: #A9B3A8; letter-spacing: .1em">08</span>Kontakt
 </a>
 
 </nav>
