@@ -365,7 +365,7 @@ MENU
 <footer class="hud" style="pointer-events: auto; padding: 24px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: #A9B3A8; background: rgba(7,11,9,.85)">
 <span>© 2026 BurtsevWerk</span>
 <span><a href="tel:+421951646707" style="color: #FFB547">+421 951 646 707</a> · <a href="mailto:info@burtsevwerk.eu" style="color: #FFB547; text-transform: none">info@burtsevwerk.eu</a> · <a href="https://t.me/Artbrl" style="color: #FFB547">Telegram</a></span>
-<span><a href="tvorba-web-stranok-zvolen/" style="color: inherit">Tvorba web stránok Zvolen</a> · <a href="tvorba-web-stranok-brezno/" style="color: inherit">Brezno</a> · <a href="blog/kolko-stoji-web-2026/" style="color: inherit">Koľko stojí web</a></span>
+<span style="text-transform: none">Tvorba web stránok: <a href="tvorba-web-stranok-zvolen/" style="color: inherit">Zvolen</a> · <a href="tvorba-web-stranok-brezno/" style="color: inherit">Brezno</a> · <a href="tvorba-web-stranok-detva/" style="color: inherit">Detva</a> · <a href="tvorba-web-stranok-lucenec/" style="color: inherit">Lučenec</a> · <a href="tvorba-web-stranok-nova-bana/" style="color: inherit">Nová Baňa</a> · <a href="tvorba-web-stranok-handlova/" style="color: inherit">Handlová</a> · <a href="tvorba-web-stranok-ruzomberok/" style="color: inherit">Ružomberok</a> · <a href="tvorba-web-stranok-martin/" style="color: inherit">Martin</a> · <a href="tvorba-web-stranok-zilina/" style="color: inherit">Žilina</a> · <a href="tvorba-web-stranok-poprad/" style="color: inherit">Poprad</a> · <a href="blog/kolko-stoji-web-2026/" style="color: inherit">Koľko stojí web</a></span>
 <span>Weby, ktoré vystúpia z radu</span>
 </footer>
 </div>
@@ -613,6 +613,7 @@ document.querySelectorAll('form[data-form]').forEach(function(f){
 .bwfab-list a svg{width:20px;height:20px;flex:none;fill:#FFB547}
 @media (prefers-reduced-motion:reduce){.bwfab-btn,.bwfab-list{transition:none;animation:none!important}}
 body.menu-open .bwfab{display:none}
+footer{padding-bottom:calc(90px + env(safe-area-inset-bottom))!important}
 </style>
 <div class="bwfab" id="bwfab">
 <div class="bwfab-list" id="bwfab-list" role="menu" aria-label="Kontakt">
