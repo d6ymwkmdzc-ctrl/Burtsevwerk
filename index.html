@@ -469,7 +469,16 @@ class Hero {
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
     };
-    try { tex(0, ims[0]); tex(1, ims[1]); tex(2, ims[this.two ? 2 : 0]); tex(3, ims[this.two ? 3 : 1]); }
+    var soft = function (im) {
+      try {
+        var k = 10, c = document.createElement('canvas');
+        c.width = Math.max(8, Math.round(im.width / k)); c.height = Math.max(8, Math.round(im.height / k));
+        var x = c.getContext('2d'); x.imageSmoothingEnabled = true; x.imageSmoothingQuality = 'high';
+        x.drawImage(im, 0, 0, c.width, c.height); return c;
+      } catch (e) { return im; }
+    };
+    var d1 = soft(ims[1]), d2 = this.two ? soft(ims[3]) : d1;
+    try { tex(0, ims[0]); tex(1, d1); tex(2, ims[this.two ? 2 : 0]); tex(3, d2); }
     catch (e) { this.pimg = null; return; }
     var U = function (n) { return gl.getUniformLocation(pr, n); };
     gl.uniform1i(U('I'), 0); gl.uniform1i(U('D'), 1); gl.uniform1i(U('J'), 2); gl.uniform1i(U('E'), 3);
@@ -504,7 +513,7 @@ class Hero {
     }
     var want1 = Math.sin(p * Math.PI * 2) + .12 * Math.sin(ts / 2400);
     this.ang += (want1 - this.ang) * Math.min(1, dt * 3);
-    var amp1 = .05, s = fit(img, amp1);
+    var amp1 = .032, s = fit(img, amp1);
     if (this.gl) {
       var g = this.gl, V = this.U; g.viewport(0, 0, cw, ch);
       g.uniform2f(V.S, s[0], s[1]); g.uniform1f(V.C, this.pcx);
