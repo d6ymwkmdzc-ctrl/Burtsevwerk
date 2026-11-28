@@ -463,7 +463,7 @@ class Hero {
       'float k=e*mv*smoothstep(.42,.68,f*.75+w*.45);' +
       'return mix(c,vec3(.9,.92,.95)*(.9+.1*f),clamp(k*.58,0.,.58));}' +
       'vec4 look(sampler2D T,sampler2D Z,vec2 uv,vec2 o){vec2 p=uv;for(int i=0;i<6;i++){float d=texture2D(Z,p).r;p=uv+o*(1.-d);}return texture2D(T,clamp(p,0.,1.));}' +
-      'void main(){vec2 ua=(q-vec2(.5))*S+vec2(C,.5);vec2 oa=O*mix(.3,1.,smoothstep(.22,.55,ua.y));vec4 a=look(I,D,ua,oa);a.rgb=mist(a.rgb,D,ua,oa);' +
+      'void main(){vec2 ua=(q-vec2(.5))*S+vec2(C,.5);vec4 a=look(I,D,ua,O);a.rgb=mist(a.rgb,D,ua,O);' +
       'if(M<.002){gl_FragColor=a;return;}' +
       'vec4 b=look(J,E,(q-vec2(.5))*S2+vec2(C2,.5),O2);gl_FragColor=mix(a,b,M);}';
     var sh = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
