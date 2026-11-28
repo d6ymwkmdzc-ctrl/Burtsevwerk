@@ -450,20 +450,9 @@ class Hero {
     this.pimg = ims[0]; this.two = ims.length > 2;
     if (!gl) return;
     var vs = 'attribute vec2 p;varying vec2 q;void main(){q=p*.5+.5;q.y=1.-q.y;gl_Position=vec4(p,0.,1.);}';
-    var fs = 'precision highp float;varying vec2 q;uniform sampler2D I,D,J,E;uniform vec2 S,O,S2,O2,T;uniform float C,C2,M,Tm;' +
-      'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}' +
-      'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1.,0.)),f.x),mix(h(i+vec2(0.,1.)),h(i+vec2(1.,1.)),f.x),f.y);}' +
-      'float fb(vec2 p){float s=0.,a=.5;for(int i=0;i<5;i++){s+=a*n(p);p=p*2.03+vec2(1.7,9.2);a*=.5;}return s;}' +
-      'vec3 mist(vec3 c,sampler2D Z,vec2 uv,vec2 o){' +
-      'float dc=texture2D(Z,uv).r;float dm=0.;' +
-      'for(int i=0;i<8;i++){float an=float(i)*.785398;dm=max(dm,texture2D(Z,uv+vec2(cos(an),sin(an))*T).r);}' +
-      'float e=smoothstep(.06,.22,dm-dc)*smoothstep(.42,.62,uv.y);' +
-      'float mv=.45+.55*clamp(length(o)/.025,0.,1.);' +
-      'float f=fb(uv*vec2(10.,16.)+vec2(Tm*.015,-Tm*.006));float w=fb(uv*vec2(3.,5.)-vec2(Tm*.007,0.));' +
-      'float k=e*mv*smoothstep(.42,.68,f*.75+w*.45);' +
-      'return mix(c,vec3(.9,.92,.95)*(.9+.1*f),clamp(k*.58,0.,.58));}' +
+    var fs = 'precision highp float;varying vec2 q;uniform sampler2D I,D,J,E;uniform vec2 S,O,S2,O2;uniform float C,C2,M;' +
       'vec4 look(sampler2D T,sampler2D Z,vec2 uv,vec2 o){vec2 p=uv;for(int i=0;i<6;i++){float d=texture2D(Z,p).r;p=uv+o*(1.-d);}return texture2D(T,clamp(p,0.,1.));}' +
-      'void main(){vec2 ua=(q-vec2(.5))*S+vec2(C,.5);vec4 a=look(I,D,ua,O);a.rgb=mist(a.rgb,D,ua,O);' +
+      'void main(){vec4 a=look(I,D,(q-vec2(.5))*S+vec2(C,.5),O);' +
       'if(M<.002){gl_FragColor=a;return;}' +
       'vec4 b=look(J,E,(q-vec2(.5))*S2+vec2(C2,.5),O2);gl_FragColor=mix(a,b,M);}';
     var sh = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
@@ -493,8 +482,7 @@ class Hero {
     catch (e) { this.pimg = null; return; }
     var U = function (n) { return gl.getUniformLocation(pr, n); };
     gl.uniform1i(U('I'), 0); gl.uniform1i(U('D'), 1); gl.uniform1i(U('J'), 2); gl.uniform1i(U('E'), 3);
-    gl.uniform2f(U('T'), 3 / (d1.width || 100), 3 / (d1.height || 100));
-    this.gl = gl; this.U = { S: U('S'), O: U('O'), S2: U('S2'), O2: U('O2'), C: U('C'), C2: U('C2'), M: U('M'), Tm: U('Tm') };
+    this.gl = gl; this.U = { S: U('S'), O: U('O'), S2: U('S2'), O2: U('O2'), C: U('C'), C2: U('C2'), M: U('M') };
     this.pimg2 = ims[2];
   }
   photoFrame(ts, dt) {
@@ -515,7 +503,7 @@ class Hero {
       var m = Math.min(1, Math.max(0, (a - .4) / .2)); m = m * m * (3 - 2 * m);
       var s1 = fit(img, amp), s2 = fit(this.pimg2, amp);
       if (this.gl) {
-        var gl = this.gl, U = this.U; gl.viewport(0, 0, cw, ch); gl.uniform1f(U.Tm, (ts || 0) / 1000);
+        var gl = this.gl, U = this.U; gl.viewport(0, 0, cw, ch);
         gl.uniform2f(U.S, s1[0], s1[1]); gl.uniform1f(U.C, this.pcx); gl.uniform2f(U.O, -a * amp * s1[0], 0);
         gl.uniform2f(U.S2, s2[0], s2[1]); gl.uniform1f(U.C2, this.pcx2); gl.uniform2f(U.O2, (1 - a) * amp * s2[0], 0);
         gl.uniform1f(U.M, m);
@@ -527,7 +515,7 @@ class Hero {
     this.ang += (want1 - this.ang) * Math.min(1, dt * 3);
     var amp1 = .032, s = fit(img, amp1);
     if (this.gl) {
-      var g = this.gl, V = this.U; g.viewport(0, 0, cw, ch); g.uniform1f(V.Tm, (ts || 0) / 1000);
+      var g = this.gl, V = this.U; g.viewport(0, 0, cw, ch);
       g.uniform2f(V.S, s[0], s[1]); g.uniform1f(V.C, this.pcx);
       g.uniform2f(V.O, this.ang * amp1 * Math.max(s[0], .5), -Math.abs(this.ang) * .004);
       g.uniform1f(V.M, 0);
